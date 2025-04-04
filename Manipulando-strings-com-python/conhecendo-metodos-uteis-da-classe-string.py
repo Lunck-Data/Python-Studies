@@ -29,7 +29,7 @@ print(curso.rstrip())
 
 curso = "Python"
 
-print(curso.center(11, "#"))
+print(curso.center(10, "#"))
 # "##Python##"
 
 print(".".join(curso))
