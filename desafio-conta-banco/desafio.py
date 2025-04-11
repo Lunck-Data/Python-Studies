@@ -35,15 +35,18 @@ while True:
             print("Limite diario de 3 saques realizado")
             extrato = extrato + f"Limite de 3 saques diario - CONTA BLOQUEADA"
             continue
+        if saque < 0:
+            print("Valor inválido, insira um valor válido.")
+            continue
         if saque > 500:
             print("""
-                                Saque Invalido
-                  Limite de R$ 500,00 por saque diario ultrapassado""")
+                Saque Invalido
+        Limite de R$ 500,00 por saque diario ultrapassado""")
             continue
         if saque > saldo:
             print("""
-                            Saque Invalido
-                  Saque maior que saldo atual""")
+                Saque Invalido
+        Saque maior que saldo atual""")
             continue
         saldo -= saque
         extrato = extrato + f"Valor de {saque:.2f} retirado da conta\n"
@@ -62,10 +65,6 @@ while True:
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
 
-print(saldo)
-
-
-
 
 
 #                                       Operação de depósito
@@ -80,4 +79,4 @@ print(saldo)
 
 #                                       Operação de extrato
 # Essa operação deve lista todos os depósitos e saques realizados na conta. No fim da listagem deve ser exibido o saldo atual da conta.
-# Os valores devem ser exibidos utilizar o formato R$ xxx.xx, exemplo: 1500.45 = R$ 1.500,45
+# Os valores devem ser exibidos utilizando o formato R$ xxx.xx, exemplo: 1500.45 = R$ 1.500,45
